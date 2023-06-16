@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>历史向前，时间向后 | Gridea</title>
+<link rel="shortcut icon" href="https://mtculture.github.io/favicon.ico?v=1686933442205">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mtculture.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="历史向前，时间向后 | Gridea - Atom Feed" href="https://mtculture.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="早上从居住的小区，到上班的地方，可以扫一辆共享单车，可以去公交站等一辆47路，也可以去小区后面搭班车。耗时都不长，全程20分钟左右的样子。下班也一样。
+从我来到北京，这样的生活，已经快三年了。陈旧、乏味、按部就班。
+有的时候，想去做一些改变..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mtculture.github.io">
+  <img class="avatar" src="https://mtculture.github.io/images/avatar.png?v=1686933442205" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              历史向前，时间向后
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-06-17
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>早上从居住的小区，到上班的地方，可以扫一辆共享单车，可以去公交站等一辆47路，也可以去小区后面搭班车。耗时都不长，全程20分钟左右的样子。下班也一样。</p>
+<p>从我来到北京，这样的生活，已经快三年了。陈旧、乏味、按部就班。</p>
+<p>有的时候，想去做一些改变，有的时候，又害怕改变。</p>
+<p>有人说，当下环境不好，不要随意去尝试改变，那么这个“环境”是怎么定义的，“随意”又是怎么定义的，说话的人和听话者其实都觉得这并不重要。因为，大家都这么说。</p>
+<p>我觉得，我似乎陷入了一个困局。就好像，明知道水会烧开，但又害怕烧开，因为盛水的杯子，泡水的茶，都还没有准备好。</p>
+<p>历史会向前，时间会向后。水不能停止加热，直到烧开，烧干。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mtculture.github.io/post/hui-li-jie-jun/">
+              <h3 class="post-title">
+                回李杰君
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mtculture.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
